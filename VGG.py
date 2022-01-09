@@ -221,8 +221,7 @@ def train_model(model, train_loader, optimizer, criterion, scheduler, train_data
     print("=====================epoch{}=====================".format(epoch + 1))
     # 训练集的正确率
     acc = acc / len(train_dataset)
-    # 损失除以len(train_dataset)=50000之后，损失的数值太小了
-    # 这里我的理解是损失看的是一个从高到低的趋势，所以为了数值美观和观察方便扩大了1000倍
+    # 数值美观和观察方便，扩大1000倍
     L = L / len(train_dataset) * 1000
     print(f'训练集损失为:{L}，训练集正确率:{acc * 100:.2f}%')
     return L
